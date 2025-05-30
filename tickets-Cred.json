@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tickets-432020",
+  "private_key_id": "2df390fc7c3607d051ecc32231861d969250a961",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9QTsTvgkimWVX\nnXY3maIpljk1+XqlWIAxPD6EL9f9KZ8C7/uqpVjsrZUEUQ1TZ1aJTeCFNbjrBPSX\nmX+3J+rEH8uTO4vy3nWJCDqdFm8wEwbUTLu+WWd/4v5tOgRQg8SZnHVFeo3cumzM\n6+TRGnGqujx6z3d+qOXDvw3BNLSlK+QTqFdS/tJKMh8zLH95FF6/RH0tGKl2+rH9\nodrld5mAV22SVynHD/YgmVG2nPD6122AsJeox8S7BWYJmdMrA7kSupFGwhcOB6Ka\nyEFTYS+LgXSoRs9DPwmO+JdPixIIbxlI8+Jbnj/7Wqi87W6dxJwnx+SUAZgvd3pC\nWnNPT9yHAgMBAAECggEAH1ha9wmeDLd4U/sV9d6Bv76MSjbAS/ts+/qc5hrgfKM0\nnXFu7tQE9upHCJh+CwbOC960pYuAzZgcBLHdN9IqLYKQnpmZs8eJkwEkaBkroDw+\ngNIWtE+tdz564k9eIJG6cbC6sZ+7OEg+NfCKDOIC2oKO+s463eUObQ3LMulOVB64\nVdQzIG/xZvgWcY4yhDWJVX6PkRUMIkteKcORYb20qaCjsbvqqF0uAXozgB3tK3y+\nfi4a2vUaHqCkPf+EDMkj4SR+kxpFpZq5LXdnUbHFctKn7L2TsIukfk7QvDl49FS9\nUqT1eZLI8275+y81V/wUlcW/lAmrJhEYw4WMroBzHQKBgQDpWVTvPLCJt83wxknO\nZHeZX8xn0Btxg3U82x6InzLmbYPn8eF4nVYE8WpvEXRBPma14l5eKZ9YzE2BHRp3\n5Gd528zmC+JGWSWFOrc7A6+X3HPGXgpYq0aptF5aNyHWZqXUhjdmxaW8mW4WMQz+\nLk59hnxOhPrd106FT7hIjrZ3owKBgQDPoCtocxAPHyIZX2RJswGDEFhNOF8H7L2d\nG5XeB7I0msXn8Usr4RnjQPwVna8u5R03VNE0Jz8552mntNrpQqTE1re2uahKgDW9\nSWlXsyLs5J+j/2npoAQ8kog+FcC9XTuUd8cIukXz9Xi8/rrMIMvlQIHz0Bi08yES\nXeyznPKlzQKBgGY8Djs2or3juqWXqnRzjfazgxGkmrFz/+RmuAzxetJ7/sObNMas\nYCiQQKpiwkVneoaLo/6rS7YS5I4B2zvV5QP9qdrMMBnUKt0hKXAAoGjvXAX3456P\ng8kMTh5Gc1vE4zimiRVM2N01d4bffKrMTPUv+7xHBMY2857ym3GmnQjzAoGAS0rU\nMv529mTd4sGbBrbpd3P38ZjdrWwGnvCf+nJkB3uRBTmVfwYUczrfr58NJj5jx+r0\nKquI3CC1SeHl+Oz3/4G2AYd2Jf40fr4ee3U01x9ZXQmEiPpETwr8aTdOO92Re5es\nD9gtAfkknbTqXJgQGMS524a9TvFULursqX3i6IkCgYEAmuVYj2STD5+BhMALbVZ5\n/YD385sNieeKkZ6ls2kaVWwbWPlLJ2vFXCc5zGrN5pDfP4uQosSGtWC63BShqu1q\nk5vXzPL8BeLwwhWWzbfl5ysR89o72VXzq3GRDyEjedRibSkBnGiNr96u1As+wIr8\n3aUdlZFv+5b7apqTCpC1PiE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ticket@tickets-432020.iam.gserviceaccount.com",
+  "client_id": "102400174996875327924",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ticket%40tickets-432020.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
