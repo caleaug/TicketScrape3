@@ -29,7 +29,8 @@ def UpdateGameTime():
         n+=1
   print(round(time.time()-t0,2), n)
 
-  UpdateGameTime()
+if __name__ == "main": UpdateGameTime()
+
 
 
 
