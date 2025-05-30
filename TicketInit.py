@@ -3,10 +3,12 @@ import requests
 import json
 import urllib
 import math
+from pathlib import Path
 import gspread, datetime, time
 from google.oauth2.service_account import Credentials
 
-creds = Credentials.from_service_account_file("tickets-Cred.json", scopes=["https://www.googleapis.com/auth/spreadsheets"])
+CredsPath = Path(__file__).resolve().parent.parent / 'tickets-Cred.json'
+creds = Credentials.from_service_account_file(CredsPath, scopes=["https://www.googleapis.com/auth/spreadsheets"])
 client = gspread.authorize(creds)
 sheets = client.open_by_key("1jD9KDi1VwgWO9cZ674cPUrZu0JnyV32RrD3eQKuBGIQ")
 wksMain = sheets.get_worksheet_by_id(0) #main #sheets.worksheets()
