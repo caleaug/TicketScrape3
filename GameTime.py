@@ -17,19 +17,21 @@ def GetGameTimePrice(data):
 
 def UpdateGameTime():
   Keys = FindKeys("GameTime")
+  col = FindColumn("GameTime")
 
-  t0 = time.time(); n=0 ; delay = time.time()+ 1
+  t0 = time.time();y=1;delay = time.time()+ 1
   dates = wksMain.col_values(3)
   for d in dates:
     if d in Keys.keys() and DateValid(d):
         price = GetGameTimePrice(GetGameData(Keys[d]))
-        if time.time()< delay: time.sleep(delay-time.time())
-        print(d, Keys[d], price, time.time())
-        delay = time.time()+ 1;
-        n+=1
-  print(round(time.time()-t0,2), n)
+        UpdateCell(y, col, price)
 
-if __name__ == "main": UpdateGameTime()
+        if time.time()< delay: time.sleep(delay-time.time())
+        delay = time.time()+ 1;
+    y+=1
+  DisplayTime("GameTime", col, time.time()-t0)
+
+if __name__ == "__main__": UpdateGameTime()
 
 
 

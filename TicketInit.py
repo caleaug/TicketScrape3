@@ -1,4 +1,4 @@
-# **********3******* This is a test 
+# **********3*******
 import requests
 import json
 import urllib
@@ -14,6 +14,14 @@ sheets = client.open_by_key("1jD9KDi1VwgWO9cZ674cPUrZu0JnyV32RrD3eQKuBGIQ")
 wksMain = sheets.get_worksheet_by_id(0) #main #sheets.worksheets()
 wksKeys = sheets.get_worksheet_by_id(1432966988)
 wksCheapest = sheets.get_worksheet_by_id(855558548)
+
+def start():
+  date = str(datetime.date.today().strftime("%m.%d.%y"))
+  Time = datetime.datetime.now().strftime("%I:%M %p")
+  wksMain.update_cell(1,1,date)
+  wksMain.update_cell(1,2,Time)
+  #letters = ["A","B","C","D","E",'F','G']
+  wksMain.batch_clear(["E2:J100"])
 
 def FindColumn(head, sheet = wksMain):
   headings = sheet.row_values(1)
@@ -48,3 +56,18 @@ def DateValid(date):
 def getJson(url):
     response = requests.get(url)
     return response.json()
+
+def UpdateCell(x,y, val):
+  wksMain.update_cell(x,y, val)
+
+def timeFormat(num):
+  m = int(num/60)
+  sec = int(num-(m*60))
+  if sec<10: return (str(m)+":0"+str(sec))
+  return (str(m)+":"+str(sec))
+
+def DisplayTime(site, col, sec):
+  y = len(wksMain.col_values(col))+1
+  UpdateCell(y, col ,timeFormat(sec))
+  print(site+": "+timeFormat(sec))
+  

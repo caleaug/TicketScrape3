@@ -47,4 +47,6 @@ def UpdateStubHub():
 
   print(round(time.time()-t0,2), n)
 
+if __name__ == "__mian_": UpdateStubHub()
+
 key0 = "154617673" # jun 14
