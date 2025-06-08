@@ -1,21 +1,7 @@
 from TicketInit import *
-from urllib.request import urlopen as uReq
-from bs4 import BeautifulSoup as soup
-
-##url = "https://www.stubhub.com/chicago-cubs-chicago-tickets-5-14-2025/event/154616437/?quantity=1&sections=1441865&ticketClasses=4380&rows=&seats=&seatTypes=&listingQty="
-##
-##uClient = uReq(url)
-##html = uClient.read()
-##uClient.close()
-##soup = soup(html, "html.parser")
-##
-##file = soup.find(id="index-data")
-##data = json.loads(file.string)
 
 def StubHubData(key):
     url = "https://www.stubhub.com/event/"+key+"/?quantity=1&sections=1441865&ticketClasses=4380&rows=&seats=&seatTypes=&listingQty=&estimatedFees=true"
-    #url = "https://www.stubhub.com/chicago-cubs-chicago-tickets-6-12-2025/event/154617683/?quantity=2"
-    #url = "https://www.stubhub.com/event/154617673/?quantity=1&sections=1441865&ticketClasses=4380&rows=&seats=&seatTypes=&listingQty=&estimatedFees=true"
     uClient = uReq(url)
     html = uClient.read()
     uClient.close()
@@ -29,24 +15,24 @@ def GetStubHubPrice(data):
     arr = []
     for d in range(len(data["grid"]["items"])):
         if("Bleachers" in data["grid"]["items"][d]["section"]):
-            try:arr.append(int(data["grid"]["items"][1]["price"].replace("$","")))
+            try:arr.append(int(data["grid"]["items"][d]["price"].replace("$","")))
             except: pass
     if arr: return min(arr)
-    if not arr: return "Error"
+    if not arr: return "NA"
 
 def UpdateStubHub():
   Keys = FindKeys("StubHub")
+  col = FindColumn("StubHub")
 
-  t0 = time.time(); n=0
+  t0 = time.time(); y=1
   dates = wksMain.col_values(3)
   for d in dates:
     if d in Keys.keys() and DateValid(d):
-        price = GetStubHubPrice(StubHubData(Keys[d]))
-        print(d, Keys[d], price)
-        n+=1
+      try: price = GetStubHubPrice(StubHubData(Keys[d]))
+      except: price = "NA"
+      UpdateCell(y, col, price)
+    y+=1
+  DisplayTime("StubHub", col, time.time()-t0)
 
-  print(round(time.time()-t0,2), n)
+if __name__ == "__main__": UpdateStubHub()
 
-if __name__ == "__mian_": UpdateStubHub()
-
-key0 = "154617673" # jun 14

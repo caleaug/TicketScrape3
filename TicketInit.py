@@ -6,6 +6,8 @@ import math
 from pathlib import Path
 import gspread, datetime, time
 from google.oauth2.service_account import Credentials
+from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as soup
 
 CredsPath = Path(__file__).resolve().parent.parent / 'tickets-Cred.json'
 creds = Credentials.from_service_account_file(CredsPath, scopes=["https://www.googleapis.com/auth/spreadsheets"])

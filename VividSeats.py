@@ -31,5 +31,8 @@ def UpdateVividSeats():
 
   print(round(time.time()-t0,2), n)
 
+key0 = "5099795"
+
 if __name__ == "__main__": UpdateVividSeats()
+
 
