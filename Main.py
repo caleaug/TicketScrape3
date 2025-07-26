@@ -16,6 +16,6 @@ UpdateStubHub()
 #UpdateTickPick()
 #UpdateTicketMaster()
 
-#UpdateCheapest(time.time()-t)
+UpdateCheapest(t)
 #save()
 
