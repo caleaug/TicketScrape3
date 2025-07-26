@@ -6,13 +6,13 @@ from TicketInit import *
 from StubHub import UpdateStubHub
 from GameTime import UpdateGameTime
 #from TickPick import UpdateTickPick
-from VividSeats import UpdateVividSeats
+#from VividSeats import UpdateVividSeats
 
 t = time.time()
 start()
 
-#UpdateStubHub()
 UpdateGameTime()
+UpdateStubHub()
 #UpdateTickPick()
 #UpdateTicketMaster()
 

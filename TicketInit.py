@@ -68,4 +68,25 @@ def DisplayTime(site, col, sec):
   y = len(wksMain.col_values(col))+1
   UpdateCell(y, col ,timeFormat(sec))
   print(site+": "+timeFormat(sec))
-  
+
+def UpdateCheapest(t):
+  prices = {}
+  DateCol = wksMain.col_values(FindColumn("Date"))[1:]
+  CheapestCol = wksMain.col_values(FindColumn("Cheapest"))[1:]
+
+  for d, c in zip(DateCol,CheapestCol):prices[d] = c
+
+  FreeCol = len(wksCheapest.row_values(1)) + 1
+  text = str(datetime.date.today().strftime("%m/%d"))+'\n'+"20"+datetime.date.today().strftime("%y")
+  wksCheapest.update_cell(1,FreeCol,text)
+  Dates = wksCheapest.col_values(FindColumn("Date", wksCheapest))[1:]
+  y=2
+  for d in Dates:
+    if d in list(prices) and prices[d]!="0" and prices[d]!="":
+      time.sleep(1.1)
+      wksCheapest.update_cell(y,FreeCol,prices[d])
+    y+=1
+  text = timeFormat((time.time()-t))
+  wksCheapest.update_cell(y,FreeCol,text)
+  print("Total:",text)
+
