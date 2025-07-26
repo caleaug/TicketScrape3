@@ -55,10 +55,6 @@ def DateValid(date):
     if m == Cm and d >= Cd: return True
   return False
 
-def getJson(url):
-    response = requests.get(url)
-    return response.json()
-
 def UpdateCell(x,y, val):
   wksMain.update_cell(x,y, val)
 

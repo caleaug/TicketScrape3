@@ -20,7 +20,7 @@ def GetStubHubPrice(data):
     if arr: return min(arr)
     if not arr: return "NA"
 
-def UpdateStubHub():
+def UpdateStubHub(p=False):
   Keys = FindKeys("StubHub")
   col = FindColumn("StubHub")
 
@@ -30,9 +30,10 @@ def UpdateStubHub():
     if d in Keys.keys() and DateValid(d):
       try: price = GetStubHubPrice(StubHubData(Keys[d]))
       except: price = "NA"
+      if p: print(price)
       UpdateCell(y, col, price)
     y+=1
   DisplayTime("StubHub", col, time.time()-t0)
 
-if __name__ == "__main__": UpdateStubHub()
+if __name__ == "__main__": UpdateStubHub(True)
 
